@@ -25,3 +25,4 @@ pnpm-debug.log*
 
 # Cloudflare
 .wrangler/
+public/verify
