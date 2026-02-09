@@ -1,0 +1,175 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="CarePlus | Modern Healthcare">
+  <div class="min-h-screen bg-slate-50 relative overflow-hidden text-slate-900 font-sans">
+    <!-- Background Blobs (Pure Tailwind) -->
+    <div class="absolute w-96 h-96 bg-teal-200/60 rounded-full blur-[80px] top-0 -left-20 animate-pulse"></div>
+    <div class="absolute w-96 h-96 bg-blue-200/60 rounded-full blur-[80px] bottom-0 -right-20 animate-pulse delay-1000"></div>
+    <div class="absolute w-64 h-64 bg-emerald-100/60 rounded-full blur-[80px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
+
+    <!-- Navbar -->
+    <nav class="relative z-50 px-6 py-6">
+      <div class="max-w-7xl mx-auto flex items-center justify-between bg-white/70 backdrop-blur-md border border-white/50 rounded-2xl px-6 py-4 shadow-sm">
+        <div class="flex items-center gap-2">
+          <div class="w-10 h-10 bg-gradient-to-br from-teal-400 to-emerald-500 rounded-xl flex items-center justify-center text-white shadow-lg shadow-teal-500/30">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+            </svg>
+          </div>
+          <span class="text-xl font-bold text-slate-800 tracking-tight">CarePlus</span>
+        </div>
+        
+        <div class="hidden md:flex items-center gap-8 font-medium text-slate-600">
+          <a href="#" class="hover:text-teal-600 transition-colors cursor-pointer">Find Doctors</a>
+          <a href="#" class="hover:text-teal-600 transition-colors cursor-pointer">Hospitals</a>
+          <a href="#" class="hover:text-teal-600 transition-colors cursor-pointer">Medicines</a>
+          <a href="#" class="hover:text-teal-600 transition-colors cursor-pointer">Surgeries</a>
+        </div>
+
+        <button class="bg-slate-900 text-white px-6 py-2.5 rounded-xl font-semibold hover:bg-slate-800 transition-colors shadow-lg shadow-slate-900/20 cursor-pointer">
+          Book Now
+        </button>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <main class="relative z-10 max-w-7xl mx-auto px-6 pt-12 pb-24 grid lg:grid-cols-2 gap-12 items-center">
+      <div class="space-y-8">
+        <div class="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow-sm text-sm font-semibold text-teal-700 border border-teal-100">
+          <span class="w-2 h-2 bg-teal-500 rounded-full animate-pulse"></span>
+          24/7 Online Support Available
+        </div>
+        
+        <h1 class="text-5xl lg:text-7xl font-bold leading-[1.1] tracking-tight text-slate-900">
+          We care about <br/>
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-emerald-500">your health</span>
+          forever.
+        </h1>
+        
+        <p class="text-lg text-slate-600 max-w-xl leading-relaxed">
+          Access top-tier medical services from the comfort of your home. 
+          Expert doctors, instant prescriptions, and holistic care plans.
+        </p>
+
+        <div class="flex items-center gap-4">
+          <div class="bg-white/70 backdrop-blur-md border border-white/50 p-4 rounded-2xl flex items-center gap-4 shadow-sm w-full max-w-md">
+            <div class="flex-1">
+               <div class="text-[10px] text-slate-500 font-black uppercase tracking-widest mb-1">Location</div>
+               <div class="flex items-center gap-2 text-slate-800 font-bold text-sm">
+                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 text-teal-500">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                 </svg>
+                 New York, USA
+               </div>
+            </div>
+            <div class="w-px h-10 bg-slate-200"></div>
+            <div class="flex-1">
+               <div class="text-[10px] text-slate-500 font-black uppercase tracking-widest mb-1">Date</div>
+               <div class="flex items-center gap-2 text-slate-800 font-bold text-sm">
+                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 text-teal-500">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
+                 </svg>
+                 Today, 24 Aug
+               </div>
+            </div>
+            <button class="bg-teal-500 p-3 rounded-xl text-white hover:bg-teal-600 transition-colors shadow-lg shadow-teal-500/30 cursor-pointer">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+              </svg>
+            </button>
+          </div>
+        </div>
+        
+        <div class="flex items-center gap-8 pt-4">
+           <div>
+              <div class="text-3xl font-bold text-slate-900">25k+</div>
+              <div class="text-xs text-slate-500 font-black uppercase tracking-widest">Happy Patients</div>
+           </div>
+           <div class="w-px h-10 bg-slate-300"></div>
+           <div>
+              <div class="text-3xl font-bold text-slate-900">120+</div>
+              <div class="text-xs text-slate-500 font-black uppercase tracking-widest">Expert Doctors</div>
+           </div>
+        </div>
+      </div>
+
+      <!-- Visual Side -->
+      <div class="relative">
+        <div class="bg-white/70 backdrop-blur-md border border-white/50 rounded-[32px] p-8 relative z-20 shadow-2xl shadow-teal-900/10">
+           <div class="flex items-center justify-between mb-8">
+              <h3 class="text-lg font-bold text-slate-900">Upcoming Schedule</h3>
+              <span class="text-teal-600 text-[10px] font-black uppercase tracking-widest bg-teal-50 px-3 py-1 rounded-full cursor-pointer">See All</span>
+           </div>
+           
+           <div class="space-y-4">
+              <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-100 flex items-center gap-4 hover:shadow-md transition-shadow cursor-pointer">
+                 <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center font-bold text-lg">Dr</div>
+                 <div class="flex-1">
+                    <div class="font-bold text-slate-900 text-sm">Dr. Sarah Smith</div>
+                    <div class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Cardiologist</div>
+                 </div>
+                 <div class="text-right">
+                    <div class="font-bold text-slate-900 text-sm">10:00</div>
+                    <div class="text-[10px] text-slate-400 font-bold uppercase tracking-widest">AM</div>
+                 </div>
+              </div>
+              <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-100 flex items-center gap-4 hover:shadow-md transition-shadow cursor-pointer">
+                 <div class="w-12 h-12 bg-orange-100 text-orange-600 rounded-xl flex items-center justify-center font-bold text-lg">Dr</div>
+                 <div class="flex-1">
+                    <div class="font-bold text-slate-900 text-sm">Dr. James Wilson</div>
+                    <div class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Neurologist</div>
+                 </div>
+                 <div class="text-right">
+                    <div class="font-bold text-slate-900 text-sm">02:30</div>
+                    <div class="text-[10px] text-slate-400 font-bold uppercase tracking-widest">PM</div>
+                 </div>
+              </div>
+           </div>
+
+           <div class="mt-8 pt-6 border-t border-slate-100">
+              <h4 class="text-[10px] font-black text-slate-400 mb-6 uppercase tracking-[0.2em]">Health Statistics</h4>
+              <div class="flex items-end gap-3 h-24">
+                 <div class="w-full bg-teal-100 rounded-t-lg h-[40%] transition-all hover:h-[50%] bg-gradient-to-t hover:from-teal-500 hover:to-teal-400"></div>
+                 <div class="w-full bg-teal-100 rounded-t-lg h-[70%] transition-all hover:h-[80%] bg-gradient-to-t hover:from-teal-500 hover:to-teal-400"></div>
+                 <div class="w-full bg-teal-100 rounded-t-lg h-[50%] transition-all hover:h-[60%] bg-gradient-to-t hover:from-teal-500 hover:to-teal-400"></div>
+                 <div class="w-full bg-[#22C55E] rounded-t-lg h-[90%] transition-all"></div>
+                 <div class="w-full bg-teal-100 rounded-t-lg h-[60%] transition-all hover:h-[70%] bg-gradient-to-t hover:from-teal-500 hover:to-teal-400"></div>
+              </div>
+           </div>
+        </div>
+
+        <!-- Floating Elements -->
+        <div class="absolute -top-10 -right-10 bg-white p-4 rounded-2xl shadow-xl z-30 animate-bounce">
+           <div class="flex items-center gap-3">
+              <div class="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center text-red-500">
+                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                    <path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z" />
+                 </svg>
+              </div>
+              <div>
+                 <div class="text-xs font-bold text-slate-900 uppercase">Heart Rate</div>
+                 <div class="text-[10px] font-bold text-slate-400 tracking-widest">102 BPM</div>
+              </div>
+           </div>
+        </div>
+
+        <div class="absolute bottom-10 -left-10 bg-white p-4 rounded-2xl shadow-xl z-30">
+           <div class="flex items-center gap-3">
+              <div class="w-10 h-10 bg-emerald-100 rounded-full flex items-center justify-center text-emerald-500">
+                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                    <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm11.378-3.917c-.89-.777-2.366-.777-3.255 0a.75.75 0 01-.988-1.129c1.454-1.272 3.776-1.272 5.23 0 1.513 1.324 1.513 3.518 0 4.842a3.75 3.75 0 01-.837.552c-.676.328-1.028.774-1.028 1.152v.75a.75.75 0 01-1.5 0v-.75c0-1.279 1.06-2.107 1.875-2.502.182-.088.351-.199.503-.331.83-.727.83-1.857 0-2.584zM12 18a.75.75 0 100-1.5.75.75 0 000 1.5z" clip-rule="evenodd" />
+                 </svg>
+              </div>
+              <div>
+                 <div class="text-xs font-bold text-slate-900 uppercase">Status</div>
+                 <div class="text-[10px] font-bold text-slate-400 tracking-widest">FREE_PLAN</div>
+              </div>
+           </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</Layout>

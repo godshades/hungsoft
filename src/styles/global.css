@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Archivo', sans-serif;
+  --font-mono: 'Space Grotesk', monospace;
+}
+
+/* Custom Utilities */
+@layer utilities {
+  .bg-grid-pattern {
+    background-image: radial-gradient(#E4E4E7 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+}

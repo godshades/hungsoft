@@ -1,0 +1,418 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const currentYear = new Date().getFullYear();
+
+const demos = [
+  { id: 1, title: 'INTERFACE_01', img: '/images/showcase/demo-1.jpg' },
+  { id: 2, title: 'DASHBOARD_UI', img: '/images/showcase/demo-2.jpg' },
+  { id: 3, title: 'COMMERCE_SYS', img: '/images/showcase/demo-3.jpg' },
+  { id: 4, title: 'ANALYTICS_V1', img: '/images/showcase/demo-4.jpg' },
+  { id: 5, title: 'DESKTOP_ARCH', img: '/images/showcase/demo-5.jpg' },
+  { id: 6, title: 'LANDING_EXP', img: '/images/showcase/demo-6.jpg' },
+];
+
+const translations = {
+  vi: {
+    NAV_ROLE: "KỸ SƯ CẤP CAO",
+    NAV_STATUS: "SẴN SÀNG TIẾP NHẬN DỰ ÁN",
+    HERO_EXP: "11 NĂM",
+    HERO_DESC: "Thiết kế & phát triển <span class='font-bold'>Desktop App</span> & <span class='font-bold'>Website</span> hiệu suất cao cho thị trường Nhật Bản & Toàn cầu.",
+    HERO_MANIFEST: "THÔNG_SỐ_HỆ_THỐNG",
+    EXP_TITLE: "01 / THÔNG_SỐ_KỸ_THUẬT",
+    MARKET: "Thị trường",
+    PROTOCOL: "Giao thức",
+    UPTIME: "Thời gian",
+    QUALITY: "Chất lượng",
+    VELOCITY: "Tốc độ",
+    JP_DESC: "Tuân thủ tiêu chuẩn kỹ thuật Nhật Bản. Phương pháp Zero-Defect cho hệ thống doanh nghiệp quy mô lớn.",
+    GL_DESC: "Phát triển linh hoạt cho quy mô toàn cầu. Ứng dụng công nghệ tiên tiến với kiến trúc high-throughput.",
+    LABS_TITLE: "02 / DEMO",
+    INITIALIZE_DEMO: "KHỞI_TẠO_XEM_DEMO.SH",
+    LETS_BUILD: "LETS BUILD",
+    ZALO_CONNECT: "BẮT_ĐẦU_KẾT_NỐI",
+    FOOTER_ENGINEERED: "Được thiết kế với độ chính xác cao // VN_",
+    STATUS_REPORT: "BÁO_CÁO_TRẠNG_THÁI",
+    CONTACT_MATRIX: "LIÊN_HỆ",
+    EMAIL_NODE: "NÚT_EMAIL",
+    GITHUB_PROTOCOL: "GIAO_THỨC_GITHUB",
+    LINKEDIN_INTERFACE: "GIAO_DIỆN_LINKEDIN"
+  },
+  en: {
+    NAV_ROLE: "SENIOR ENGINEER",
+    NAV_STATUS: "AVAILABLE FOR NEW PROJECTS",
+    HERO_EXP: "11 YEARS",
+    HERO_DESC: "Architecting high-performance <span class='font-bold'>Desktop</span>, <span class='font-bold'>Desktop</span> & <span class='font-bold'>Web Applications</span> for Japan & Global markets.",
+    HERO_MANIFEST: "SYSTEM_MANIFEST",
+    EXP_TITLE: "01 / TECHNICAL_SPECIFICATIONS",
+    MARKET: "Market",
+    PROTOCOL: "Protocol",
+    UPTIME: "Uptime",
+    QUALITY: "Quality",
+    VELOCITY: "Velocity",
+    JP_DESC: "Deep integration with Japanese engineering standards. Zero-defect methodology applied to high-stakes enterprise systems.",
+    GL_DESC: "Hyper-responsive development for global scale. Implementing cutting-edge tech stacks with high-throughput architecture.",
+    LABS_TITLE: "02 / GENERATIVE_LABS_OUTPUT",
+    INITIALIZE_DEMO: "INITIALIZE_DEMO_VIEW.SH",
+    LETS_BUILD: "LET'S BUILD",
+    ZALO_CONNECT: "INITIALIZE_CONNECT",
+    FOOTER_ENGINEERED: "Engineered With Precision // VN_",
+    STATUS_REPORT: "STATUS_REPORT",
+    CONTACT_MATRIX: "CONTACT",
+    EMAIL_NODE: "EMAIL_NODE",
+    GITHUB_PROTOCOL: "GITHUB_PROTOCOL",
+    LINKEDIN_INTERFACE: "LINKEDIN_INTERFACE"
+  },
+  ja: {
+    NAV_ROLE: "シニアエンジニア",
+    NAV_STATUS: "新規プロジェクト受付可能",
+    HERO_EXP: "11 年間",
+    HERO_DESC: "日本・グローバル市場向けの高性能<span class='font-bold'>デスクトップ</span>・<span class='font-bold'>モバイル</span>・<span class='font-bold'>Webアプリケーション</span>の設計・開発。",
+    HERO_MANIFEST: "システム仕様書",
+    EXP_TITLE: "01 / 技術仕様",
+    MARKET: "市場",
+    PROTOCOL: "プロトコル",
+    UPTIME: "実績",
+    QUALITY: "品質",
+    VELOCITY: "速度",
+    JP_DESC: "日本の開発基準に準拠。ゼロ欠陥手法を大規模エンタープライズシステムに適用。",
+    GL_DESC: "グローバル規模に対応する柔軟な開発。高スループット構成による最先端技術の実装。",
+    LABS_TITLE: "02 / 生成ラボ・アウトプット",
+    INITIALIZE_DEMO: "デモ表示の初期化.SH",
+    LETS_BUILD: "共に創る。",
+    ZALO_CONNECT: "接続開始",
+    FOOTER_ENGINEERED: "精密に設計 // VN_",
+    STATUS_REPORT: "ステータスレポート",
+    CONTACT_MATRIX: "連絡",
+    EMAIL_NODE: "メール・ノード",
+    GITHUB_PROTOCOL: "ギットハブ・プロトコル",
+    LINKEDIN_INTERFACE: "リンクトイン・インターフェース"
+  }
+};
+---
+
+<Layout title={`Senior Engineer Portfolio / ${currentYear}`}>
+  <div class="bg-zinc-50 min-h-screen text-zinc-900 font-sans selection:bg-blue-600 selection:text-white pb-12 relative overflow-hidden">
+    
+    <!-- Background Grid Layers -->
+    <div class="fixed inset-0 bg-grid-pattern opacity-[0.6] pointer-events-none z-0"></div>
+    <div class="fixed inset-0 opacity-[0.05] pointer-events-none z-0" style="background-image: linear-gradient(#18181b 1px, transparent 1px), linear-gradient(90deg, #18181b 1px, transparent 1px); background-size: 100px 100px;"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-zinc-50/90 backdrop-blur-sm border-b border-zinc-200">
+      <div class="max-w-[1400px] mx-auto px-6 h-16 flex items-center justify-between">
+        <div class="font-mono text-[10px] tracking-[0.3em] font-bold uppercase">PORTFOLIO_SYSTEM_V.{currentYear}</div>
+        <div class="flex items-center gap-6">
+           <div class="hidden sm:flex items-center gap-2 font-mono text-[10px] text-zinc-400">
+              <span class="w-1.5 h-1.5 bg-blue-500 rounded-full animate-pulse"></span>
+              CPU_LOAD: 12%
+           </div>
+           <div class="font-mono text-[10px] tracking-[0.2em] text-zinc-500 font-bold uppercase" data-t="NAV_ROLE">SENIOR ENGINEER</div>
+           
+           <!-- Language Switcher -->
+           <div class="flex items-center gap-3 ml-6 pl-6 border-l border-zinc-200">
+              {['VI', 'EN', 'JA'].map(l => (
+                <button class="lang-btn font-mono text-[10px] text-zinc-400 hover:text-blue-600 cursor-pointer transition-colors font-bold" data-lang={l.toLowerCase()}>
+                  [{l}]
+                </button>
+              ))}
+           </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Side Ruler -->
+    <div class="fixed left-0 top-0 h-full w-12 border-r border-zinc-200 z-40 hidden xl:flex flex-col items-center py-20 pointer-events-none opacity-40">
+       {Array.from({length: 10}).map((_, i) => (
+          <div class="font-mono text-[10px] mb-20 transform -rotate-90 origin-center text-zinc-400">
+             0{i}_COORD
+          </div>
+       ))}
+    </div>
+
+    <main class="relative z-10 pt-32 max-w-[1400px] mx-auto px-6 xl:pl-20">
+      
+      <!-- Hero Section -->
+      <section class="min-h-[80vh] flex flex-col justify-center mb-24 relative">
+        <!-- Technical Annotation -->
+        <div class="absolute top-0 right-0 p-6 hidden lg:block">
+           <div class="bg-white border border-zinc-200 p-6 shadow-sm font-mono text-[10px] space-y-2 w-64">
+              <div class="text-blue-600 font-bold border-b border-zinc-100 pb-2 mb-2 uppercase tracking-widest" data-t="HERO_MANIFEST">System_Manifest</div>
+              <div class="flex justify-between"><span>TYPE:</span> <span>FULL_STACK</span></div>
+              <div class="flex justify-between"><span>EXP:</span> <span>11_YEARS</span></div>
+              <div class="flex justify-between"><span>LOC:</span> <span>VN_SEA_GLOBAL</span></div>
+              <div class="flex justify-between"><span>ARCH:</span> <span>DISTRIBUTED</span></div>
+           </div>
+        </div>
+
+        <div class="flex items-center gap-3 mb-12 group">
+          <span class="relative flex h-3 w-3">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-3 w-3 bg-green-600"></span>
+          </span>
+          <span class="font-mono text-[10px] tracking-[0.3em] text-zinc-500 uppercase font-black group-hover:text-zinc-900 transition-colors" data-t="NAV_STATUS">Available_For_New_Prototypes</span>
+        </div>
+
+        <div class="space-y-4">
+          <div class="relative inline-block">
+             <h1 class="text-[14vw] md:text-[11vw] leading-[0.8] font-black tracking-tighter text-zinc-900 select-none uppercase" data-t="HERO_EXP">
+               11 YEARS
+             </h1>
+             <div class="absolute -bottom-2 right-0 font-mono text-[10px] text-blue-600 font-bold tracking-widest uppercase">Precision_Built</div>
+          </div>
+          <p class="text-xl md:text-5xl font-light text-zinc-500 max-w-5xl leading-[1.1] tracking-tight" data-t="HERO_DESC">
+            Architecting high-performance <span class='font-bold'>Applications</span> (Desktop/Web) & <span class='font-bold'>Websites</span> for Japan & Global markets.
+          </p>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="mt-20 flex items-center gap-4 opacity-30 font-mono text-[10px] tracking-widest">
+           <span class="w-12 h-[1px] bg-zinc-400"></span>
+           SCROLL_TO_INITIALIZE
+        </div>
+      </section>
+
+      <!-- Experience Section -->
+      <section class="py-32 border-t border-zinc-200 relative">
+        <!-- Decoration -->
+        <div class="absolute top-0 right-0 font-mono text-[80px] font-black text-zinc-100 -z-10 select-none">DATA_01</div>
+
+        <div class="flex items-end justify-between mb-20">
+          <div class="space-y-2">
+             <h2 class="font-mono text-xs tracking-[0.3em] text-zinc-400 font-bold uppercase" data-t="EXP_TITLE">01 / TECHNICAL_SPECIFICATIONS</h2>
+             <div class="h-1 w-20 bg-blue-600"></div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+          <!-- Card 1: Japan -->
+          <div class="group bg-white border border-zinc-200 p-10 md:p-16 hover:border-zinc-900 transition-all duration-700 relative overflow-hidden shadow-sm hover:shadow-2xl">
+            <div class="absolute top-0 right-0 p-8">
+               <div class="w-12 h-12 border border-zinc-100 rounded-full flex items-center justify-center group-hover:bg-blue-600 group-hover:text-white transition-all">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+               </div>
+            </div>
+            <div class="font-mono text-[10px] text-zinc-400 mb-16 border-b border-zinc-100 pb-4 inline-block tracking-widest font-bold uppercase">DOMAIN: JP_REGION_ARCH</div>
+            <div class="space-y-10">
+              <div>
+                <span class="block text-zinc-400 text-[10px] font-mono uppercase tracking-[0.3em] mb-4" data-t="MARKET">Focus_Market</span>
+                <span class="text-5xl md:text-7xl font-black text-zinc-900 tracking-tighter uppercase">Japan</span>
+              </div>
+              <div class="grid grid-cols-2 gap-12 pt-8 border-t border-zinc-50">
+                <div>
+                  <span class="block text-zinc-400 text-[10px] font-mono uppercase tracking-widest mb-2" data-t="PROTOCOL">Protocol</span>
+                  <span class="text-2xl md:text-3xl font-black text-zinc-900 tracking-tight uppercase" data-t="QUALITY">Quality</span>
+                </div>
+                <div>
+                  <span class="block text-zinc-400 text-[10px] font-mono uppercase tracking-widest mb-2" data-t="UPTIME">Uptime</span>
+                  <span class="text-2xl md:text-3xl font-black text-blue-600 tracking-tight">08_YEARS</span>
+                </div>
+              </div>
+              <p class="text-zinc-500 text-base leading-relaxed max-w-md font-medium" data-t="JP_DESC">
+                Deep integration with Japanese engineering standards. Zero-defect methodology applied to high-stakes enterprise systems.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 2: Global -->
+          <div class="group bg-white border border-zinc-200 p-10 md:p-16 hover:border-zinc-900 transition-all duration-700 relative overflow-hidden shadow-sm hover:shadow-2xl">
+            <div class="absolute top-0 right-0 p-8">
+               <div class="w-12 h-12 border border-zinc-100 rounded-full flex items-center justify-center group-hover:bg-blue-600 group-hover:text-white transition-all font-mono text-[10px] font-bold">GL</div>
+            </div>
+            <div class="font-mono text-[10px] text-zinc-400 mb-16 border-b border-zinc-100 pb-4 inline-block tracking-widest font-bold uppercase">DOMAIN: GLOBAL_DIST_SYS</div>
+            <div class="space-y-10">
+              <div>
+                <span class="block text-zinc-400 text-[10px] font-mono uppercase tracking-[0.3em] mb-4" data-t="MARKET">Focus_Market</span>
+                <span class="text-5xl md:text-7xl font-black text-zinc-900 tracking-tighter uppercase">Global</span>
+              </div>
+              <div class="grid grid-cols-2 gap-12 pt-8 border-t border-zinc-50">
+                <div>
+                  <span class="block text-zinc-400 text-[10px] font-mono uppercase tracking-widest mb-2" data-t="PROTOCOL">Protocol</span>
+                  <span class="text-2xl md:text-3xl font-black text-zinc-900 tracking-tight uppercase" data-t="VELOCITY">Velocity</span>
+                </div>
+                <div>
+                  <span class="block text-zinc-400 text-[10px] font-mono uppercase tracking-widest mb-2" data-t="UPTIME">Uptime</span>
+                  <span class="text-2xl md:text-3xl font-black text-blue-600 tracking-tight">03_YEARS</span>
+                </div>
+              </div>
+               <p class="text-zinc-500 text-base leading-relaxed max-w-md font-medium" data-t="GL_DESC">
+                Hyper-responsive development for global scale. Implementing cutting-edge tech stacks with high-throughput architecture.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Showcase Section -->
+      <section class="py-32 border-t border-zinc-200">
+        <div class="flex items-end justify-between mb-20">
+          <div class="space-y-2">
+             <h2 class="font-mono text-xs tracking-[0.3em] text-zinc-400 font-bold uppercase" data-t="LABS_TITLE">02 / GENERATIVE_LABS_OUTPUT</h2>
+             <div class="h-1 w-20 bg-blue-600"></div>
+          </div>
+          <span class="font-mono text-[10px] text-zinc-400 hidden md:block tracking-widest uppercase">DESIGN_SYSTEM_ALPHA_BUILD_1.0</span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-zinc-200 border border-zinc-200">
+          {demos.map((demo) => (
+            <a 
+              href={`/showcase/demo-${demo.id}`} 
+              class="group relative block overflow-hidden bg-zinc-50 aspect-square"
+            >
+              <img 
+                src={demo.img} 
+                alt={demo.title}
+                class="w-full h-full object-cover transition-all duration-1000 group-hover:scale-105 grayscale group-hover:grayscale-0 contrast-125"
+              />
+              <div class="absolute inset-0 bg-blue-600/0 group-hover:bg-blue-600/10 transition-colors duration-700"></div>
+              
+              <!-- Meta Label -->
+              <div class="absolute top-8 left-8 z-10">
+                <span class="inline-block bg-white/90 backdrop-blur-xl border border-zinc-200 px-4 py-1.5 font-mono text-[10px] uppercase tracking-[0.2em] text-zinc-900 group-hover:bg-blue-600 group-hover:text-white group-hover:border-blue-600 transition-all duration-300 font-bold">
+                  [{demo.title}]
+                </span>
+              </div>
+
+              <!-- Terminal Overlay on Hover -->
+              <div class="absolute inset-0 bg-zinc-900/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center backdrop-blur-[2px]">
+                 <div class="border border-white/20 px-8 py-4 bg-zinc-900/80 font-mono text-[10px] text-white tracking-[0.3em] transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 font-black" data-t="INITIALIZE_DEMO">
+                    INITIALIZE_DEMO_VIEW.SH
+                 </div>
+              </div>
+              
+              <div class="absolute bottom-8 right-8 z-10 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                <div class="bg-blue-600 text-white w-12 h-12 flex items-center justify-center rounded-full shadow-2xl shadow-blue-600/50">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section class="py-40 border-t border-zinc-200 relative overflow-hidden">
+        <!-- Floating Text Decor -->
+        <div class="absolute top-20 left-0 font-mono text-[10px] text-zinc-300 tracking-[1em] uppercase -rotate-90 origin-left opacity-30">COLLABORATION_PORTAL_{currentYear}</div>
+
+        <div class="flex flex-col items-center text-center space-y-16">
+          <div class="space-y-4">
+             <div class="font-mono text-[10px] tracking-[0.5em] text-blue-600 font-black uppercase mb-8">Ready_For_Deployment</div>
+             <h2 class="text-[12vw] leading-[0.8] font-black tracking-tighter text-zinc-900 hover:text-blue-600 transition-colors duration-700 cursor-default select-none uppercase" data-t="LETS_BUILD">
+               LET'S BUILD.
+             </h2>
+          </div>
+          
+          <a 
+            href="https://zalo.me/0383338728" 
+            target="_blank"
+            class="group relative inline-flex items-center gap-6 bg-zinc-900 text-white px-16 py-8 overflow-hidden transition-all hover:bg-blue-600 hover:shadow-[0_0_50px_rgba(37,99,235,0.3)]"
+          >
+            <span class="font-mono text-xs tracking-[0.5em] uppercase relative z-10 font-black" data-t="ZALO_CONNECT">INITIALIZE_CONNECT</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 relative z-10 transition-transform duration-500 group-hover:translate-x-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+            <!-- Hover Slide -->
+            <div class="absolute inset-0 bg-white/10 -translate-x-full group-hover:translate-x-0 transition-transform duration-500"></div>
+          </a>
+        </div>
+      </section>
+
+      <!-- Footer Upgrade with CONTACT_MATRIX -->
+      <footer class="py-20 border-t border-zinc-200 bg-zinc-50 relative overflow-hidden">
+        <div class="max-w-[1400px] mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 relative z-10">
+           
+           <!-- Left Column: Status -->
+           <div class="space-y-8">
+              <div class="font-mono text-[10px] text-zinc-400 uppercase tracking-[0.4em] font-bold">
+                 <span data-t="FOOTER_ENGINEERED">Engineered_With_Precision // VN_</span>{currentYear}
+              </div>
+              <div class="flex gap-12 font-mono text-[10px] text-zinc-400 uppercase tracking-[0.4em] font-bold">
+                 <a href="#" class="hover:text-blue-600 transition-colors cursor-pointer underline underline-offset-4" data-t="STATUS_REPORT">STATUS_REPORT</a>
+                 <span>©_{currentYear}_ARCHIVE</span>
+              </div>
+           </div>
+
+           <!-- Right Column: Contact Matrix -->
+           <div class="space-y-8">
+              <div class="font-mono text-[10px] text-blue-600 uppercase tracking-[0.4em] font-black border-b border-zinc-200 pb-4 mb-8" data-t="CONTACT_MATRIX">
+                 CONTACT_MATRIX
+              </div>
+              
+              <div class="grid grid-cols-2 gap-y-6 gap-x-12">
+                 <!-- Email Node -->
+                 <a href="mailto:vuonghung12@gmail.com" class="group flex items-center gap-4 hover:translate-x-2 transition-transform duration-300 cursor-pointer">
+                    <div class="w-8 h-8 border border-zinc-200 flex items-center justify-center group-hover:bg-blue-600 group-hover:border-blue-600 transition-colors">
+                       <svg class="w-4 h-4 text-zinc-400 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                    </div>
+                    <span class="font-mono text-[10px] font-bold tracking-widest text-zinc-500 group-hover:text-zinc-900 transition-colors">EMAIL</span>
+                 </a>
+
+                 <!-- GitHub Protocol -->
+                 <a href="https://github.com" target="_blank" class="group flex items-center gap-4 hover:translate-x-2 transition-transform duration-300 cursor-pointer">
+                    <div class="w-8 h-8 border border-zinc-200 flex items-center justify-center group-hover:bg-blue-600 group-hover:border-blue-600 transition-colors">
+                       <svg class="w-4 h-4 text-zinc-400 group-hover:text-white transition-colors" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path></svg>
+                    </div>
+                    <span class="font-mono text-[10px] font-bold tracking-widest text-zinc-500 group-hover:text-zinc-900 transition-colors">0383338728</span>
+                 </a>
+
+                 <!-- LinkedIn Interface -->
+                 <a href="https://linkedin.com" target="_blank" class="group flex items-center gap-4 hover:translate-x-2 transition-transform duration-300 cursor-pointer">
+                    <div class="w-8 h-8 border border-zinc-200 flex items-center justify-center group-hover:bg-blue-600 group-hover:border-blue-600 transition-colors">
+                       <svg class="w-4 h-4 text-zinc-400 group-hover:text-white transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    </div>
+                    <span class="font-mono text-[10px] font-bold tracking-widest text-zinc-500 group-hover:text-zinc-900 transition-colors">0383338728</span>
+                 </a>
+              </div>
+           </div>
+        </div>
+      </footer>
+
+    </main>
+  </div>
+</Layout>
+
+<script define:vars={{ translations }}>
+  const buttons = document.querySelectorAll('.lang-btn');
+  const translatableElements = document.querySelectorAll('[data-t]');
+  
+  function updateLanguage(lang) {
+    // Update active state of buttons
+    buttons.forEach(btn => {
+      if (btn.dataset.lang === lang) {
+        btn.classList.add('text-blue-600');
+        btn.classList.remove('text-zinc-400');
+      } else {
+        btn.classList.remove('text-blue-600');
+        btn.classList.add('text-zinc-400');
+      }
+    });
+
+    // Update text content
+    translatableElements.forEach(el => {
+      const key = el.dataset.t;
+      if (translations[lang] && translations[lang][key]) {
+        // Use innerHTML for description since it has <br/> tags
+        if (key === 'HERO_DESC' || key === 'LETS_BUILD') {
+           el.innerHTML = translations[lang][key];
+        } else {
+           el.innerText = translations[lang][key];
+        }
+      }
+    });
+
+    localStorage.setItem('pref-lang', lang);
+  }
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      updateLanguage(btn.dataset.lang);
+    });
+  });
+
+  // Init
+  const savedLang = localStorage.getItem('pref-lang') || 'vi';
+  updateLanguage(savedLang);
+</script>
